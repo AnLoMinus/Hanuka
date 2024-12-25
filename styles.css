@@ -1,0 +1,661 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #f1c40f;
+  --accent-color: #e67e22;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  background-color: #f8f9fa;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1481137344492-d5a150a97f8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0;
+  margin-bottom: 30px;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.custom-item,
+.tip-item,
+.value-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+
+.custom-item h3,
+.tip-item h3,
+.value-item h3 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.values-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+footer {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 50px 0;
+  }
+
+  .values-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spirituality-content h3 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin: 15px 0 10px;
+}
+
+.spirituality-content ul {
+  padding-right: 20px;
+}
+
+.digital-item {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  margin-bottom: 15px;
+  height: 100%;
+}
+
+.digital-item h3 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.list-unstyled {
+  padding: 0;
+  list-style: none;
+}
+
+.list-unstyled li {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.custom-item ul {
+  padding-right: 20px;
+  margin-bottom: 0;
+}
+
+.custom-item li {
+  margin-bottom: 5px;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #495057;
+}
+
+/* אנימציית זוהר לטקסט */
+.glow-text {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--secondary-color);
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--secondary-color);
+  }
+}
+
+/* חנוכייה משופרת */
+.floating-menorah {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.candle-container {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  position: relative;
+  padding: 20px;
+}
+
+/* בסיס החנוכייה */
+.candle-container::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  height: 15px;
+  background: linear-gradient(45deg, #c0932b, #ffd700);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 -2px 4px rgba(255, 215, 0, 0.3) inset;
+  transform: translateZ(-10px);
+}
+
+/* נרות משופרים */
+.candle {
+  width: 18px;
+  height: 45px;
+  background: linear-gradient(to right, #f4f4f4, #fff, #e0e0e0);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.5s ease;
+  transform-style: preserve-3d;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.shamash {
+  width: 22px;
+  height: 65px;
+  background: linear-gradient(to right, #f4f4f4, #fff, #e0e0e0);
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* אפקט להבה משופר */
+.candle.lit::after,
+.shamash::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(
+    circle at center,
+    #fff 10%,
+    #ffd700 40%,
+    #ff8c00 60%,
+    transparent 80%
+  );
+  filter: blur(1px);
+  border-radius: 50% 50% 20% 20%;
+  transform-origin: center bottom;
+  animation: flame 3s infinite;
+  box-shadow: 0 0 15px #ffd700, 0 0 30px #ff8c00,
+    0 0 45px rgba(255, 140, 0, 0.3);
+}
+
+/* אנימציית להבה */
+@keyframes flame {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleY(1) rotate(-2deg);
+  }
+  25% {
+    transform: translateX(-50%) scaleY(1.1) rotate(2deg);
+  }
+  50% {
+    transform: translateX(-50%) scaleY(0.9) rotate(-1deg);
+  }
+  75% {
+    transform: translateX(-50%) scaleY(1.2) rotate(1deg);
+  }
+}
+
+/* אפקט נר דולק */
+.candle.lit {
+  background: linear-gradient(to right, #ffd700, #ffc800, #ff8c00);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 140, 0, 0.2);
+  animation: candleLight 2s infinite;
+}
+
+@keyframes candleLight {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-1px) rotate(0.5deg);
+  }
+  75% {
+    transform: translateY(1px) rotate(-0.5deg);
+  }
+}
+
+/* אפקט זיקוקים */
+.firework {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* הילת אור סביב החנוכייה */
+.floating-menorah::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 0, 0.2),
+    transparent 70%
+  );
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.floating-menorah.all-lit::before {
+  opacity: 1;
+}
+
+/* כפתור הדלקת נר */
+.light-candle-btn {
+  background-color: var(--secondary-color);
+  border: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.light-candle-btn:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* שיפור כרטיסיות */
+.card {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15),
+    -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+/* אנימציית סביבון */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dreidel-icon {
+  display: inline-block;
+  animation: spin 3s linear infinite;
+  font-size: 1.5em;
+}
+
+/* סגנונות לפעילויות */
+.activity-item,
+.content-item,
+.inspiration-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.activity-item:hover,
+.content-item:hover,
+.inspiration-item:hover {
+  transform: translateX(5px);
+}
+
+.activity-item h3,
+.content-item h3,
+.inspiration-item h3 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activity-item ul,
+.content-item ul {
+  padding-right: 20px;
+  margin-bottom: 0;
+}
+
+.activity-item li,
+.content-item li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.inspiration-item p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* אנימציית כניסה לפעילויות */
+.activity-item,
+.content-item,
+.inspiration-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* עיצוב אייקונים */
+.activity-item h3::before,
+.content-item h3::before,
+.inspiration-item h3::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: 8px;
+}
+
+.activity-item h3::before {
+  content: "🎮";
+}
+.content-item h3::before {
+  content: "📚";
+}
+.inspiration-item h3::before {
+  content: "✨";
+}
+
+/* עיצוב כללי לתוכן */
+.content-section {
+  position: relative;
+  padding: 30px;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+/* כותרות */
+h2.card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h2.card-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  border-radius: 2px;
+}
+
+/* רשימות */
+.custom-list {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding: 12px 35px 12px 0;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.custom-list li::before {
+  content: "✦";
+  position: absolute;
+  right: 12px;
+  color: var(--accent-color);
+  font-size: 1.2em;
+}
+
+.custom-list li:hover {
+  transform: translateX(-5px);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* קטעי טקסט */
+.content-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2c3e50;
+  text-align: justify;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* כרטיסיות תוכן */
+.content-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 -2px 5px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  border-radius: 0 15px 15px 0;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), 0 -2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* אייקונים וסמלים */
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  border-radius: 50%;
+  margin-left: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icon-wrapper i {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* תגיות ותוויות */
+.tag {
+  display: inline-block;
+  padding: 5px 15px;
+  background: linear-gradient(135deg, #f1c40f20, #e67e2220);
+  border-radius: 20px;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  margin: 5px;
+  border: 1px solid var(--secondary-color);
+}
+
+/* מידע נוסף */
+.info-box {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-right: 4px solid var(--accent-color);
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  position: relative;
+}
+
+.info-box::before {
+  content: "💡";
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* מדיה */
+@media (max-width: 768px) {
+  .content-section {
+    padding: 20px;
+  }
+
+  h2.card-title {
+    font-size: 1.5rem;
+  }
+
+  .content-text {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .custom-list li {
+    padding: 10px 30px 10px 0;
+  }
+}
+
+/* אנימציות לתוכן */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* עיצוב טקסט מודגש */
+.highlight-text {
+  background: linear-gradient(
+    120deg,
+    var(--secondary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  font-weight: 600;
+}
+
+.highlight-text:hover {
+  background-size: 100% 88%;
+}
