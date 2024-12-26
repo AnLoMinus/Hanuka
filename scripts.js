@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (candlesLit < 8) {
       const currentCandle = candles[candlesLit];
 
-      // אנימציית הדלקה הדרגתית
+      // אנימצ��ת הדלקה הדרגתית
       currentCandle.style.transition = "all 1s ease";
       currentCandle.classList.add("lit");
 
@@ -91,4 +91,76 @@ document.addEventListener("DOMContentLoaded", function () {
       candle.style.transform = "none";
     });
   });
+});
+
+function showLyricsModal(songId) {
+  let title;
+  let content;
+
+  switch (songId) {
+    case "maozTzur":
+      title = "מעוז צור";
+      content = maozTzurLyrics;
+      break;
+    case "banuChoshech":
+      title = banuChoshechLyrics.title;
+      content = banuChoshechLyrics.lyrics.join("\n");
+      break;
+    case "chanukiaLiYesh":
+      title = chanukiaLiYeshLyrics.title;
+      content = chanukiaLiYeshLyrics.lyrics.join("\n");
+      break;
+    case "sevivonSovSov":
+      title = sevivonSovSovLyrics.title;
+      content = sevivonSovSovLyrics.lyrics.join("\n");
+      break;
+  }
+
+  // הסרת מודל קודם אם קיים
+  const existingModal = document.getElementById("lyricsModal");
+  if (existingModal) {
+    existingModal.remove();
+  }
+
+  // יצירת המודל
+  const modalHtml = `
+        <div class="modal fade" id="lyricsModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">${title}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="song-content">
+                            <pre class="song-text">${content}</pre>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">סגור</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+  // הוספת המודל לדף
+  document.body.insertAdjacentHTML("beforeend", modalHtml);
+
+  // הצגת המודל
+  const modal = new bootstrap.Modal(document.getElementById("lyricsModal"));
+  modal.show();
+}
+
+function updateSource() {
+  const source = displayDailySource();
+  document.querySelector(".source-title").textContent = source.source;
+  document.querySelector(".original-text").textContent = source.text;
+  document.querySelector(".translation").textContent = source.translation;
+  document.querySelector(".explanation").textContent = source.explanation;
+}
+
+// Initialize the source when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+  updateSource();
 });

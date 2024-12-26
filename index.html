@@ -27,6 +27,26 @@
             </div>
         </section>
 
+        <!-- מקורות מהתורה - New Section -->
+        <section class="torah-sources py-4">
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">📜 מקורות מהמסורת</h2>
+                        <div id="dailySource" class="text-center">
+                            <div class="source-text mb-3">
+                                <h3 class="source-title mb-3"></h3>
+                                <p class="original-text mb-2"></p>
+                                <p class="translation mb-2"></p>
+                                <p class="explanation text-muted"></p>
+                            </div>
+                            <button class="btn btn-outline-primary" onclick="updateSource()">הצג מקור אחר</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="floating-menorah">
             <div class="candle-container">
                 <div class="shamash"></div>
@@ -49,10 +69,60 @@
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">סקירה כללית</h2>
-                            <p class="lead">
-                                חנוכה הוא אחד מהחגים המשמחים ביותר ביהדות, החוגג את ניצחון המכבים על היוונים ואת נס פך
-                                השמן שהספיק לשמונה ימים במקום יום אחד.
-                            </p>
+                            <div class="overview-content">
+                                <p class="lead">
+                                    חנוכה הוא אחד מהחגים המשמחים ביותר ביהדות, החוגג את ניצחון המכבים על היוונים ואת נס
+                                    פך
+                                    השמן שהספיק לשמונה ימים במקום יום אחד.
+                                </p>
+
+                                <div class="historical-background mt-4">
+                                    <h3>רקע היסטורי</h3>
+                                    <p>
+                                        בשנת 167 לפני הספירה, אנטיוכוס הרביעי, מלך האימפריה היוונית-סלווקית, גזר גזרות
+                                        על היהודים
+                                        ואסר את קיום המצוות. הוא טימא את בית המקדש והציב בו פסל. מתתיהו החשמונאי ובניו,
+                                        ובראשם יהודה המכבי,
+                                        הנהיגו מרד שהסתיים בניצחון מפתיע על הצבא היווני האדיר.
+                                    </p>
+                                </div>
+
+                                <div class="miracle-story mt-4">
+                                    <h3>סיפור הנס</h3>
+                                    <p>
+                                        כשנכנסו החשמונאים לבית המקדש, הם מצאו את כל כדי השמן הטהור מטומאים, למעט פך אחד
+                                        קטן
+                                        שהיה חתום בחותמו של הכהן הגדול. השמן שבפך הספיק להדלקת המנורה ליום אחד, אך באורח
+                                        פלא
+                                        הוא דלק במשך שמונה ימים, עד שהצליחו להכין שמן טהור חדש.
+                                    </p>
+                                </div>
+
+                                <div class="modern-significance mt-4">
+                                    <h3>משמעות החג בימינו</h3>
+                                    <p>
+                                        חנוכה מסמל את ניצחון האור על החושך, הרוח על החומר, והמעטים על הרבים. החג מדגיש
+                                        את
+                                        חשיבות שמירת הזהות היהודית אל מול השפעות זרות, ומלמד על כוחה של אמונה ונחישות.
+                                    </p>
+                                    <ul class="modern-themes mt-2">
+                                        <li>חיזוק הזהות היהודית והמסורת</li>
+                                        <li>הפצת אור וטוב בעולם</li>
+                                        <li>אומץ לעמוד על עקרונות ואמונה</li>
+                                        <li>חשיבות האחדות והערבות ההדדית</li>
+                                    </ul>
+                                </div>
+
+                                <div class="global-celebration mt-4">
+                                    <h3>חגיגות החג בעולם</h3>
+                                    <p>
+                                        כיום חנוכה נחגג בקהילות יהודיות ברחבי העולם, עם הדלקת חנוכיות ענק במרכזי ערים
+                                        ואירועים קהילתיים מגוונים. החג הפך לסמל של חופש דתי וסובלנות, ומסריו
+                                        האוניברסליים
+                                        מדברים גם אל לא-יהודים רבים.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,7 +146,7 @@
                                 <div class="custom-item">
                                     <h3>אכילת מאכלים מטוגנים</h3>
                                     <ul>
-                                        <li>סופגניות - עם ריבה, שוקולד או קרם וניל</li>
+                                        <li>סופגניות - עם ריבה, שוקולד או רם וניל</li>
                                         <li>לטקס (לביבות) - על בסיס תפוחי אדמה או ירקות אחרים</li>
                                     </ul>
                                 </div>
@@ -139,9 +209,42 @@
                         <div class="card-body">
                             <h2 class="card-title">🎶 שירי חנוכה מומלצים</h2>
                             <ul class="list-unstyled">
-                                <li>מעוז צור – השיר המסורתי להדלקת נרות</li>
-                                <li>באנו חושך לגרש – להוספת שמחה ואנרגיה</li>
-                                <li>חנוכייה לי יש – לשיר עם הילדים</li>
+                                <li class="song-item">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>מעוז צור – השיר המסורתי להדלקת נרות</span>
+                                        <button class="btn btn-outline-primary btn-sm"
+                                            onclick="showLyricsModal('maozTzur')">
+                                            צפה במילים <i class="fas fa-music"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="song-item">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>באנו חושך לגרש – להוספת שמחה ואנרגיה</span>
+                                        <button class="btn btn-outline-primary btn-sm"
+                                            onclick="showLyricsModal('banuChoshech')">
+                                            צפה במילים <i class="fas fa-music"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="song-item">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>חנוכייה לי יש – לשיר עם הילדים</span>
+                                        <button class="btn btn-outline-primary btn-sm"
+                                            onclick="showLyricsModal('chanukiaLiYesh')">
+                                            צפה במילים <i class="fas fa-music"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="song-item">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>סביבון סוב סוב – שיר ילדים קלאסי</span>
+                                        <button class="btn btn-outline-primary btn-sm"
+                                            onclick="showLyricsModal('sevivonSovSov')">
+                                            צפה במילים <i class="fas fa-music"></i>
+                                        </button>
+                                    </div>
+                                </li>
                                 <li>שירים מודרניים המשלבים מסורת</li>
                             </ul>
                         </div>
@@ -329,7 +432,13 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Lyrics/maozTzur.js"></script>
+    <script src="Lyrics/banuChoshech.js"></script>
+    <script src="Lyrics/chanukiaLiYesh.js"></script>
+    <script src="Lyrics/sevivonSovSov.js"></script>
+    <script src="sources/torahSources.js"></script>
     <script src="scripts.js"></script>
+
 </body>
 
 </html>

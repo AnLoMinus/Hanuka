@@ -642,7 +642,7 @@ h2.card-title::after {
   }
 }
 
-/* עיצוב טקסט מודגש */
+/* עיצוב טקסט מ��גש */
 .highlight-text {
   background: linear-gradient(
     120deg,
@@ -658,4 +658,134 @@ h2.card-title::after {
 
 .highlight-text:hover {
   background-size: 100% 88%;
+}
+
+/* עיצוב מודל השיר */
+.song-content {
+  direction: rtl;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 10px;
+}
+
+.song-text {
+  font-family: "Heebo", sans-serif;
+  white-space: pre-wrap;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--primary-color);
+  margin: 0;
+  padding: 15px;
+  background: transparent;
+  border: none;
+}
+
+.modal-header {
+  background: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 15px;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* אנימציית כניסה למודל */
+.modal.fade .modal-dialog {
+  transform: scale(0.8);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+/* ע��צוב פריט שיר */
+.song-item {
+  padding: 15px !important;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.song-item:hover {
+  background-color: #f8f9fa;
+  border-color: var(--secondary-color);
+  border-radius: 8px;
+}
+
+.song-item button {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.song-item:hover button {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* עיצוב כפתור השיר */
+.btn-outline-primary {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-outline-primary:hover {
+  color: white;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* עיצוב כותרת משנית במודל */
+.modal-header small {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* שיפור עיצוב טקסט השיר */
+.song-text {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  line-height: 2;
+  white-space: pre-wrap;
+  direction: rtl;
+}
+
+/* הדגשת פזמון חוזר */
+.song-text:not(:first-child) {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Add some styling for the new songs */
+.song-container {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.song {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.song:last-child {
+  border-bottom: none;
 }
